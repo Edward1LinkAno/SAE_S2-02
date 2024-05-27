@@ -21,7 +21,16 @@ public class GrapheListe implements Graphe {
     }
 
     public void ajouterArc(String depart, String destination, double cout) {
-        throw new Error("A fair") ;
+        //On vérifie que le départ et la destination existent bien dans notre liste et on est ajoutent sinon.
+        if(!noeuds.contains(depart)) {
+            noeuds.add(depart);
+        }
+        if(!noeuds.contains(destination)) {
+            noeuds.add(destination);
+        }
+        //ajout d'un nouvel Arc dans la liste.
+        int indice=this.getIndice(depart);
+        adjacence.get(indice).ajouterArc(new Arc(destination,cout));
     }
 
     @Override
@@ -31,18 +40,6 @@ public class GrapheListe implements Graphe {
 
     public int getIndice(String n) {
         return noeuds.indexOf(n);
-    }
-
-    public String toString() {
-        String s = "" ;
-        for (int i = 0; i < noeuds.size(); i++) {
-            s += noeuds.get(i) + " -> ";
-            for (int j = 0; j < adjacence.get(i).getArcs().size(); j++) {
-                s += adjacence.get(i).getArcs().get(i).getDest()+adjacence.get(i).getArcs().get(i).getCout()+" " ;
-            }
-            s+="\n";
-        }
-        return s ;
     }
 
 }
