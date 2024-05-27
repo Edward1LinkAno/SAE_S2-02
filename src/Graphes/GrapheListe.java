@@ -21,7 +21,16 @@ public class GrapheListe implements Graphe {
     }
 
     public void ajouterArc(String depart, String destination, double cout) {
-        return null;
+        //On vérifie que le départ et la destination existent bien dans notre liste et on est ajoutent sinon.
+        if(!noeuds.contains(depart)) {
+            noeuds.add(depart);
+        }
+        if(!noeuds.contains(destination)) {
+            noeuds.add(destination);
+        }
+        //ajout d'un nouvel Arc dans la liste.
+        int indice=this.getIndice(depart);
+        adjacence.get(indice).ajouterArc(new Arc(destination,cout));
     }
 
     @Override
