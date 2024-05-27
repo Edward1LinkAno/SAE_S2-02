@@ -42,5 +42,16 @@ public class GrapheListe implements Graphe {
         return noeuds.indexOf(n);
     }
 
+    public String toString() {
+        String s = "" ;
+        for (int i = 0; i < noeuds.size(); i++) {
+            s += noeuds.get(i) + " -> ";
+            for (int j = 0; j < adjacence.get(i).getArcs().size(); j++) {
+                s += adjacence.get(i).getArcs().get(i).getDest()+adjacence.get(i).getArcs().get(i).getCout()+" " ;
+            }
+            s+="\n";
+        }
+        return s ;
+    }
 }
 
