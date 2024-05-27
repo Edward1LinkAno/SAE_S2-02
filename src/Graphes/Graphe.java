@@ -1,7 +1,9 @@
+package Graphes;
+
 import java.util.List;
 
 /**
- * Interface Graphe
+ * Interface Graphes.Graphe
  */
 public interface Graphe {
 

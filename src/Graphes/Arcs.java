@@ -1,12 +1,14 @@
+package Graphes;
+
 import java.util.ArrayList;
 import java.util.List;
 
-/* Classe permettant de gérer une liste d'Arc */
+/* Classe permettant de gérer une liste d'Graphes.Arc */
 public class Arcs {
-    private List<Arc> arcs; /* Représente la liste d'Arc a gérer */
+    private List<Arc> arcs; /* Représente la liste d'Graphes.Arc a gérer */
 
     /**
-     * Constructeur vide qui construit une liste vide d'Arc
+     * Constructeur vide qui construit une liste vide d'Graphes.Arc
      */
     public Arcs() {
         this.arcs = new ArrayList<Arc>();
@@ -21,7 +23,7 @@ public class Arcs {
     }
 
     /**
-     * Methode GetArcs qui nous retourne notre liste d'Arc
+     * Methode GetArcs qui nous retourne notre liste d'Graphes.Arc
      * @return l'attribut arcs
      */
     public List<Arc> getArcs() {
