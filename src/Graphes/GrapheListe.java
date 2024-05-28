@@ -32,9 +32,14 @@ public class GrapheListe implements Graphe {
         }
         //ajout d'un nouvel Arc dans la liste.
         int indice=this.getIndice(depart);
-        if (this.adjacence.get(indice)==null) {
+
+        try {
+            if (this.adjacence.get(indice) == null) {
+            }
+        } catch (NullPointerException e) {
             this.adjacence.add(new Arcs());
         }
+
         adjacence.get(indice).ajouterArc(new Arc(destination,cout));
     }
 
