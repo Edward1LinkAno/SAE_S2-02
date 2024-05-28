@@ -13,6 +13,7 @@ public class GrapheListe implements Graphe {
 
     public GrapheListe(ArrayList<String> noeuds) {
         this.noeuds = noeuds;
+        adjacence = new ArrayList<Arcs>();
         for (int i=0;i<noeuds.size();i++) {
             adjacence.add(i,new Arcs());
         }
@@ -50,11 +51,11 @@ public class GrapheListe implements Graphe {
     }
 
     public String toString() {
-        String s = "____________________ FICHIER ____________________" ;
+        String s = "____________________ FICHIER ____________________\n" ;
         for (int i = 0; i < noeuds.size(); i++) {
             s += noeuds.get(i) + " -> ";
             for (int j = 0; j < adjacence.get(i).getArcs().size(); j++) {
-                s += adjacence.get(i).getArcs().get(i).getDest()+adjacence.get(i).getArcs().get(i).getCout()+" " ;
+                s += adjacence.get(i).getArcs().get(j).getDest()+adjacence.get(i).getArcs().get(j).getCout()+" " ;
             }
             s+="\n";
         }
