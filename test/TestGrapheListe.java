@@ -41,6 +41,6 @@ public class TestGrapheListe {
         }
 
         assertEquals(5,noeuds.size());
-        assertEquals(Gl.getAdjacence().get(1).getArcs().get(0),"E");
+        assertEquals(Gl.getAdjacence().get(1).getArcs().get(0).getDest(),"E");
     }
 }
