@@ -43,7 +43,7 @@ public class GrapheListe implements Graphe {
     }
 
     public String toString() {
-        String s = "" ;
+        String s = "____________________ FICHIER ____________________" ;
         for (int i = 0; i < noeuds.size(); i++) {
             s += noeuds.get(i) + " -> ";
             for (int j = 0; j < adjacence.get(i).getArcs().size(); j++) {
@@ -51,6 +51,7 @@ public class GrapheListe implements Graphe {
             }
             s+="\n";
         }
+        s+="_______________________________________________" ;
         return s ;
     }
 }
