@@ -24,12 +24,17 @@ public class GrapheListe implements Graphe {
         //On vérifie que le départ et la destination existent bien dans notre liste et on est ajoutent sinon.
         if(!noeuds.contains(depart)) {
             noeuds.add(depart);
+            adjacence.add(new Arcs());
         }
         if(!noeuds.contains(destination)) {
             noeuds.add(destination);
+            adjacence.add(new Arcs());
         }
         //ajout d'un nouvel Arc dans la liste.
         int indice=this.getIndice(depart);
+        if (this.adjacence.get(indice)==null) {
+            this.adjacence.add(new Arcs());
+        }
         adjacence.get(indice).ajouterArc(new Arc(destination,cout));
     }
 
