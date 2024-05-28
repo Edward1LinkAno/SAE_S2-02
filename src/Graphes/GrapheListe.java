@@ -2,6 +2,7 @@ package Graphes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.NullPointerException ;
 
 /**
  * Methode qui implémente Graphe et qui permet de représenter les données associées à un graphe
@@ -21,6 +22,7 @@ public class GrapheListe implements Graphe {
     }
 
     public void ajouterArc(String depart, String destination, double cout) {
+        boolean b = false ;
         //On vérifie que le départ et la destination existent bien dans notre liste et on est ajoutent sinon.
         if(!noeuds.contains(depart)) {
             noeuds.add(depart);
@@ -33,14 +35,15 @@ public class GrapheListe implements Graphe {
         //ajout d'un nouvel Arc dans la liste.
         int indice=this.getIndice(depart);
 
-        try {
-            if (this.adjacence.get(indice) == null) {
-            }
-        } catch (NullPointerException e) {
-            this.adjacence.add(new Arcs());
-        }
+        while(!b) {
+            try {
+                adjacence.get(indice).ajouterArc(new Arc(destination, cout));
 
-        adjacence.get(indice).ajouterArc(new Arc(destination,cout));
+                b = true ;
+            } catch (NullPointerException e) {
+                this.adjacence.add(indice, new Arcs());
+            }
+        }
     }
 
     @Override
