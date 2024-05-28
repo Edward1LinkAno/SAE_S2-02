@@ -13,6 +13,9 @@ public class GrapheListe implements Graphe {
 
     public GrapheListe(ArrayList<String> noeuds) {
         this.noeuds = noeuds;
+        for (int i=0;i<noeuds.size();i++) {
+            adjacence.add(i,new Arcs());
+        }
     }
 
     @Override
@@ -34,16 +37,7 @@ public class GrapheListe implements Graphe {
         }
         //ajout d'un nouvel Arc dans la liste.
         int indice=this.getIndice(depart);
-
-        while(!b) {
-            try {
-                adjacence.get(indice).ajouterArc(new Arc(destination, cout));
-
-                b = true ;
-            } catch (NullPointerException e) {
-                this.adjacence.add(indice, new Arcs());
-            }
-        }
+        adjacence.get(indice).ajouterArc(new Arc(destination, cout));
     }
 
     @Override
