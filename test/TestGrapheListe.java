@@ -40,6 +40,7 @@ public class TestGrapheListe {
             assertTrue(false);
         }
 
-        assertEquals(Gl.("B").,"E");
+        assertEquals(5,noeuds.size());
+        assertEquals(Gl.getAdjacence().get(1).getArcs().get(0),"E");
     }
 }

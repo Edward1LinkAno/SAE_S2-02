@@ -62,5 +62,9 @@ public class GrapheListe implements Graphe {
         s+="_______________________________________________" ;
         return s ;
     }
+
+    public ArrayList<Arcs> getAdjacence() {
+        return adjacence;
+    }
 }
 
