@@ -55,7 +55,7 @@ public class GrapheListe implements Graphe {
         for (int i = 0; i < noeuds.size(); i++) {
             s += noeuds.get(i) + " -> ";
             for (int j = 0; j < adjacence.get(i).getArcs().size(); j++) {
-                s += adjacence.get(i).getArcs().get(j).getDest()+adjacence.get(i).getArcs().get(j).getCout()+" " ;
+                s += adjacence.get(i).getArcs().get(j).getDest()+"("+Math.round(adjacence.get(i).getArcs().get(j).getCout())+") " ;
             }
             s+="\n";
         }
