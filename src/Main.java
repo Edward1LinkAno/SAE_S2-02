@@ -1,10 +1,8 @@
-package Main;
-
 import Graphes.* ;
 
 import java.util.ArrayList;
 
-public class MainGraphe {
+public class Main {
 
     public static void main(String[] args) {
         ArrayList<String> noeuds = new ArrayList<>() ;
