@@ -1,17 +1,27 @@
 package Algorithme;
 
+import Graphes.Arc;
+import Graphes.Graphe;
+import Graphes.GrapheListe;
+
+import java.util.ArrayList;
+
 public class Dijkstra {
+
+        public <Valeur>Valeur resoudre(Graphe g, String depart) {
 //    Entrées :
-//    G un graphe orienté avec une pondération positive des arcs (coût ou poids)
-//    A un sommet (départ) de G
-//
+                //GrapheListe G;      //G un graphe orienté avec une pondération positive des arcs (coût ou poids)
+
+                Arc A;    //A un sommet (départ) de G
+
 //    Début
-//    Q <- {} // utilisation d’une liste de noeuds `a traiter
+                ArrayList<String> Q = new ArrayList<String>();     // utilisation d’une liste de noeuds `a traiter
+                for (String s : G.listeNoeuds()) {
 //    Pour chaque sommet v de G faire
 //       v.valeur <- Infini
 //       v.parent <- Indéfini
 //       Q <- Q U {v} // ajouter le sommet v `a la liste Q
-//    Fin Pour
+//    }
 //    A.valeur <- 0
 //    Tant que Q est un ensemble non vide faire
 //          u <- un sommet de Q telle que u.valeur est minimal
@@ -27,5 +37,6 @@ public class Dijkstra {
 //          Fin Pour
 //      Fin Tant que
 //      Fin
+        }
 
 }
