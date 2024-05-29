@@ -2,6 +2,7 @@ import Graphes.GrapheListe;
 import org.junit.jupiter.api.Test ;
 import java.util.ArrayList;
 
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestGrapheListe {
@@ -78,7 +79,7 @@ public class TestGrapheListe {
     /**
      * test avec des sommets sans adjacents
      */
-    @org.junit.Test
+    @Test
     public void testValideAvecNoeudInexistant() {
         ArrayList<String> noeuds = new ArrayList<>() ;
         noeuds.add("A") ;
@@ -107,7 +108,7 @@ public class TestGrapheListe {
     /**
      * test de avec un graphe construit Avec la liste de noeud Incomplète
      */
-    @org.junit.Test
+    @Test
     public void testValideAvecListeNoeudIncomplete() {
         ArrayList<String> noeuds = new ArrayList<>() ;
         noeuds.add("A") ;
