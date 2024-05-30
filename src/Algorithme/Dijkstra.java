@@ -87,17 +87,17 @@ public class Dijkstra {
                 while (!Q.isEmpty()) {
                         String u=depart;
                         int index=0;
-                                                for(int j=0;j<Q.size();j++) {
-                                                        if(v.getParent(u)!=null) {
-                                                                u=Q.get(j);
-                                                                index=j;
-                                                        }
-                                                }
+                        for(int j=0;j<Q.size();j++) {
+                                if(v.getParent(u)!=null) {
+                                        u=Q.get(j);
+                                        index=j;
+                                }
+                        }
                         Q.remove(Q.get(index));
                         for (int k=0; k<Q.size();k++) {
                                 if (v.getParent(u)!=null) {
                                         int ind=g.getIndice(u);
-                                        double d=v.getValeur(u)+g.suivants(Q.get(k)).get(ind).getCout();
+                                        double d=v.getValeur(u)+g.suivants(u).get(g.getIndice(u)).getCout();
                                         if (d<v.getValeur(Q.get(k))) {
                                                 v.setValeur(Q.get(k),d);
                                                 v.setParent(Q.get(k),u);
