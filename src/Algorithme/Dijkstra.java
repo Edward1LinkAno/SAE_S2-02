@@ -97,7 +97,7 @@ public class Dijkstra {
                         for (int k=0; k<Q.size();k++) {
                                 if (v.getParent(u)!=null) {
                                         int ind=g.getIndice(u);
-                                        double d=v.getValeur(u)+g.suivants(Q.get(k)).get().getCout();
+                                        double d=v.getValeur(u)+g.suivants(Q.get(k)).get(ind).getCout();
                                         if (d<v.getValeur(Q.get(k))) {
                                                 v.setValeur(Q.get(k),d);
                                                 v.setParent(Q.get(k),u);
