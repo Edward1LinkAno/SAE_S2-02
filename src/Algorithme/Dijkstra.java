@@ -34,11 +34,29 @@ public class Dijkstra {
 //    A.valeur <- 0
                 while (!Q.isEmpty()) {
 //    Tant que Q est un ensemble non vide faire
+                        Valeur u = v;
+                        int index=0;
+                        for(int j=0;j<Q.size();j++) {
+                                if(v.getValeur(Q.get(j))>g.suivants(Q.get(j)).get(j).getCout()) {
+                                        v.setValeur(Q.get(j),g.suivants(Q.get(j)).get(j).getCout());
+                                        index=j;
+                                }
+                        }
+                        Q.remove(Q.get(index));
 
 
 //          u <- un sommet de Q telle que u.valeur est minimal
         //enlever le sommet u de la liste Q
 //          Q <- Q \ {u}
+                        for (int k=0; k<Q.size();k++) {
+                                if (g.suivants(Q.get(k)).get(k).getDest().equals(Q.get(k))) {
+                                        double d=u.getValeur(Q.get(k))+g.suivants(Q.get(k)).get(k).getCout();
+                                        if (d<v.getValeur(Q.get(k))) {
+                                                v.setValeur(Q.get(k),d);
+                                                v.setParent(Q.get(k),u.getParent(Q.get(k)));
+                                        }
+                                }
+                        }
 //          Pour chaque sommet v de Q tel que l’arc (u,v) existe faire
 //              d <- u.valeur + poids(u,v)
 //              Si d < v.valeur
@@ -49,6 +67,7 @@ public class Dijkstra {
 //          Fin Pour
 //      Fin Tant que
                 }
+                return v;
 //      Fin
         }
 
