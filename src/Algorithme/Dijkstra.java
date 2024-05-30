@@ -70,7 +70,7 @@ public class Dijkstra {
 //      Fin
 //        }
 
-        public Valeur resoudre(Graphe g, String depart) {
+        public Valeur resoudre(GrapheListe g, String depart) {
                 //Valeur A = new Valeur();  //A un sommet (départ) de G
                 Valeur v = new Valeur();
 
@@ -88,15 +88,16 @@ public class Dijkstra {
                         String u=depart;
                         int index=0;
                                                 for(int j=0;j<Q.size();j++) {
-                                                        if(v.getValeur(Q.get(j))>g.suivants(Q.get(j)).get(j).getCout()) {
+                                                        if(v.getParent(u)!=null) {
                                                                 u=Q.get(j);
                                                                 index=j;
                                                         }
                                                 }
                         Q.remove(Q.get(index));
                         for (int k=0; k<Q.size();k++) {
-                                if (g.suivants(Q.get(k)).get(k).getDest().equals(Q.get(k))) {
-                                        double d=v.getValeur(u)+g.suivants(Q.get(k)).get(k).getCout();
+                                if (v.getParent(u)!=null) {
+                                        int ind=g.getIndice(u);
+                                        double d=v.getValeur(u)+g.suivants(Q.get(k)).get().getCout();
                                         if (d<v.getValeur(Q.get(k))) {
                                                 v.setValeur(Q.get(k),d);
                                                 v.setParent(Q.get(k),u);
