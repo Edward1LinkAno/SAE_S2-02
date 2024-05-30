@@ -1,3 +1,4 @@
+import Algorithme.BellmanFord;
 import Graphes.* ;
 
 import java.util.ArrayList;
@@ -23,5 +24,7 @@ public class Main {
         graphe.ajouterArc("E","D",43) ;
 
         System.out.println(graphe);
+        BellmanFord bellmanFord = new BellmanFord() ;
+        System.out.println(bellmanFord.resoudre(graphe,"A"));
     }
 }
