@@ -19,14 +19,13 @@ public class BellmanFord {
         double val = 0 ;
         valeur.setParent(depart,null);
         valeur.setValeur(depart,val) ;
-        List<Arc> arcs = g.suivants(depart) ;
 
 
-        for (int i = 0; i < noeud.size() ; i++) {
-            for (int j = 0; j < arcs.size(); j++) {
-
+        for (String s : g.listeNoeuds()) {
+            for (int i=0; i<g.suivants(s).size(); i++) {
+                valeur.setValeur(s,Double.MAX_VALUE);
+                valeur.setParent("indefini",s);
             }
-            
         }
 
 
