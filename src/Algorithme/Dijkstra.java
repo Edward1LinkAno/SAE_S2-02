@@ -35,6 +35,11 @@ public class Dijkstra {
 
 
         public Valeur resoudre(Graphe g, String depart) {
+                if (!g.listeNoeuds().contains(depart)) {
+                        System.out.println("Le noeud de départ est inexistant");
+                        return null;
+                }
+
                 Valeur v = new Valeur();
                 ArrayList<String> Q = new ArrayList<String>(); // Liste de noeuds à traiter
 
