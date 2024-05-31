@@ -33,7 +33,12 @@ public class Dijkstra {
 //                Fin Pour
 //        Fin Tant que
 
-
+        /**
+         * Méthode résoudre prenant en paramètre un graphe construit et un sommet de départ.
+         * @param g Le graphe correctement construit
+         * @param depart Le noeud de départ du graphe
+         * @return Un objet de classe Valeur qui contient le coût du chemin le plus cours vers chaque points ainsi que son noeud parent.
+         */
         public Valeur resoudre(Graphe g, String depart) {
                 if (!g.listeNoeuds().contains(depart)) {
                         System.out.println("Le noeud de départ est inexistant");

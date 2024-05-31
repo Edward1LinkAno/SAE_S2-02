@@ -1,3 +1,5 @@
+package Main;
+
 import Algorithme.BellmanFord;
 import Graphes.* ;
 

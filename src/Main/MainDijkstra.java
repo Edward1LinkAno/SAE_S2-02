@@ -1,3 +1,5 @@
+package Main;
+
 import Algorithme.Dijkstra;
 import Graphes.GrapheListe;
 
