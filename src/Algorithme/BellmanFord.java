@@ -57,6 +57,7 @@ public class BellmanFord {
      * @return Un objet de classe Valeur qui contient le coût du chemin le plus cours vers chaque points ainsi que son noeud parent.
      */
     public Valeur resoudre(Graphe g, String depart) {
+        //vérification que le sommet départ existe bien
         if (!g.listeNoeuds().contains(depart)) {
             System.out.println("Le noeud de départ est inexistant");
             return null;
@@ -64,22 +65,28 @@ public class BellmanFord {
 
         Valeur v = new Valeur();
 
+        // Initialisation des distances et des parents
         for (String s : g.listeNoeuds()) {
             v.setValeur(s, Double.MAX_VALUE);
             v.setParent(s, "indefini");
         }
         v.setValeur(depart, 0);
 
+        //boolean pour permettre l'arrêt de la boucle while
         boolean arret = false;
+        // Boucle principale de l'algorithme
         while (!arret) {
             arret=true;
+            //Parcous des noeuds du graphe
             for (String s : g.listeNoeuds()) {
+                //parcours des successeurs du graphe
                 for (Arc a : g.suivants(s)) {
 
                     String voisin = a.getDest();
                         double minimum = v.getValeur(s) + a.getCout();
-
+                        //si la nouvelle valeur est inférieur a l'ancienne
                         if (minimum < v.getValeur(voisin)) {
+                            //on remplace les valeurs
                             v.setValeur(voisin, minimum);
                             v.setParent(voisin, s);
                             arret=false;
