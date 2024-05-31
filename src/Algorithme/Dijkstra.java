@@ -8,6 +8,31 @@ import java.util.ArrayList;
 
 public class Dijkstra {
 
+//        Algorithme :
+//        Entrées :
+//        G un graphe orienté avec une pondération positive des arcs (coût ou poids)
+//        A un sommet (départ) de G
+//
+//        Début
+//        Q <- {}
+//        Pour chaque sommet v de G faire
+//                v.valeur <- Infini
+//                v.parent <- Indéfini
+//                Q <- Q U {v}
+//        Fin Pour
+//        A.valeur <- 0
+//        Tant que Q est un ensemble non vide faire
+//                u <- un sommet de Q telle que u.valeur est minimal
+//                Q <- Q \ {u}
+//                Pour chaque sommet v de Q tel que l’arc (u,v) existe faire
+//                      d <- u.valeur + poids(u,v)
+//                      Si d < v.valeur
+//                              Alors v.valeur <- d
+//                              v.parent <- u
+//                        Fin Si
+//                Fin Pour
+//        Fin Tant que
+
 
         public Valeur resoudre(Graphe g, String depart) {
                 Valeur v = new Valeur();
@@ -46,6 +71,4 @@ public class Dijkstra {
                 }
                 return v;
         }
-
-
 }
